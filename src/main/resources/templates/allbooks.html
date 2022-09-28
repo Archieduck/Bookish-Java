@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse all books</title>
+
+    <link rel="stylesheet" href="/styles/general.css"/>
+    <link rel="stylesheet" href="/styles/navbar.css"/>
+    <link rel="stylesheet" href="/styles/about.css"/>
+</head>
+<body>
+
+<div class="container">
+    <h2>All books:</h2>
+    <div class="book-list">
+        <div th:each="book : ${model.books}" class="book-item">
+
+            <div class="book-item"><span  th:text="${book.bookName}"></span> <span  th:text="${book.authorName}"></span> <span  th:text="${book.copies}"></span>
+                <a th:href="${'/allbooks/delete-book?bookId=' + book.bookId}" class="delete-button">delete</a>
+            <select class ="option">
+                <option>Checkout</option>
+                <option>Edit</option>
+                <option>Delete</option>
+
+            </select>
+            </div>
+
+        </div>
+    </div>
+
+    <h2>Add a book:</h2>
+    <form th:action="@{/allbooks/add-book}" method="post">
+        <div class="add-tech-row">
+            <label>
+                <span>Name: </span>
+                <input type="text" name="bookName">
+            </label>
+        </div>
+        <div class="add-tech-row">
+            <label>
+                <span>Author name: </span>
+                <input type="text" name="authorName">
+            </label>
+        </div>
+        <div class="add-tech-row">
+            <label>
+                <span>Number of copies: </span>
+                <input type="int" name="copies">
+            </label>
+        </div>
+        <div class="add-tech-row">
+            <span><!-- spacer --></span>
+            <input type="submit" value="Add book" />
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+h2 {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.book-list {
+    width: 80%;
+}
+
+.book-item {
+    background-color: #e9ecef;
+}
+
+.book-item:hover {
+    background-color: #1377de;
+}
+
+.book-item::selection {
+    background-color: blueviolet;
+}
+
+.option {
+    position: relative;
+    left : 50%;
+    right :5%;
+}

@@ -5,15 +5,15 @@ package org.softwire.training.bookish.models.database;
 public class Books {
     private int bookId;
     private String bookName;
-    private int authorId;
+    private String authorName;
     private int copies;
 
     public int getBookId() {
         return bookId;
     }
 
-    public int getAuthorId() {
-        return authorId;
+    public String getAuthorName() {
+        return authorName;
     }
 
     public String getBookName() {
@@ -32,8 +32,8 @@ public class Books {
         this.bookName = bookName;
     }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public void setCopies(int copies) {
